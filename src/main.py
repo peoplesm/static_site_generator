@@ -1,9 +1,11 @@
-from textnode import *
+from htmlnode import *
 
 
 def main():
 
-    test = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
+    test = HTMLNode(
+        "a", "google", props={"href": "https://www.google.com", "target": "_blank"}
+    )
 
     print(test)
 
