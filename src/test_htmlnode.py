@@ -63,10 +63,19 @@ class TestHTMLNode(unittest.TestCase):
         )
 
     def test_to_html_value_error(self):
-        node = LeafNode("p")
+        node = LeafNode("p", None)
         with self.assertRaises(ValueError):
             node.to_html()
 
     def test_to_html_no_tag(self):
         node = LeafNode(tag=None, value="This is text.")
         self.assertEqual(node.to_html(), node.value)
+
+    def test_repr_LeafNode(self):
+        node = LeafNode(
+            "a", "google", props={"href": "https://www.google.com", "target": "_blank"}
+        )
+        self.assertEqual(
+            node.__repr__(),
+            "LeafNode(a, google, {'href': 'https://www.google.com', 'target': '_blank'})",
+        )
