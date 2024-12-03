@@ -1,5 +1,4 @@
 import unittest
-
 from htmlnode import *
 
 
@@ -57,8 +56,8 @@ class TestHTMLNode(unittest.TestCase):
     # LeafNode tests
     def test_leaf_constructor(self):
         node_no_props = LeafNode("p", "This is a paragraph of text.")
-        self.assertEqual(node_no_props.to_html(), "<p>This is a paragraph of text.</p>")
         node_with_props = LeafNode("a", "Click me!", {"href": "https://www.google.com"})
+        self.assertEqual(node_no_props.to_html(), "<p>This is a paragraph of text.</p>")
         self.assertEqual(
             node_with_props.to_html(), '<a href="https://www.google.com">Click me!</a>'
         )
