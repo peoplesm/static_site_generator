@@ -79,3 +79,7 @@ class TestHTMLNode(unittest.TestCase):
             node.__repr__(),
             "LeafNode(a, google, {'href': 'https://www.google.com', 'target': '_blank'})",
         )
+
+
+if __name__ == "__main__":
+    unittest.main()
