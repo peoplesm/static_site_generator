@@ -6,20 +6,14 @@ def main():
         "p",
         [
             LeafNode("b", "Bold text"),
-            ParentNode(
-                "p",
-                [
-                    LeafNode("i", "nested"),
-                    LeafNode("b", "parent with children"),
-                ],
-            ),
             LeafNode(None, "Normal text"),
             LeafNode("i", "italic text"),
             LeafNode(None, "Normal text"),
         ],
+        props={"class": "introduction"},
     )
 
-    print(node.to_html())
+    print(node.__repr__())
 
 
 if __name__ == "__main__":
