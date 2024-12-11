@@ -1,19 +1,11 @@
 from htmlnode import *
+from textnode import *
 
 
 def main():
-    node = ParentNode(
-        "p",
-        [
-            LeafNode("b", "Bold text"),
-            LeafNode(None, "Normal text"),
-            LeafNode("i", "italic text"),
-            LeafNode(None, "Normal text"),
-        ],
-        props={"class": "introduction"},
-    )
+    node = TextNode("Hello", TextType.BOLD, None)
 
-    print(node.__repr__())
+    print(text_node_to_html_node(node))
 
 
 if __name__ == "__main__":
