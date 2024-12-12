@@ -1,6 +1,7 @@
 import unittest
 
-from textnode import *
+from textnode import TextNode, TextType, text_node_to_html_node
+from htmlnode import LeafNode
 
 
 class TestTextNode(unittest.TestCase):
@@ -26,6 +27,8 @@ class TestTextNode(unittest.TestCase):
         node = TextNode("TextType test node", TextType.ITALIC)
         self.assertEqual(node.text_type.value, "italic")
 
+
+class TestTextNodeToHTMLNode(unittest.TestCase):
     def test_text_node_to_html_node_text(self):
         node = TextNode("Words", TextType.TEXT)
         node2 = LeafNode(None, "Words", None)
