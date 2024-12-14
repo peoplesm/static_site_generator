@@ -28,6 +28,7 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(node.text_type.value, "italic")
 
 
+# Could have made the node2 by just calling the fxn on node and compared values that way. This way below requires me to import LeafNode from htmlnode.py and adding a __eq__ method to LeafNode class
 class TestTextNodeToHTMLNode(unittest.TestCase):
     def test_text_node_to_html_node_text(self):
         node = TextNode("Words", TextType.TEXT)
