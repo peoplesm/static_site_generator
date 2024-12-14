@@ -4,8 +4,7 @@ from split_nodes_delimiter import split_nodes_delimiter
 
 
 def main():
-    node = TextNode("This is text with a *bold block*", TextType.TEXT)
-    print(split_nodes_delimiter([node], "*", TextType.BOLD))
+    print("Hello")
 
 
 if __name__ == "__main__":
