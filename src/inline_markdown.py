@@ -1,3 +1,4 @@
+import re
 from textnode import TextType, TextNode
 
 
@@ -21,3 +22,15 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
         new_nodes.extend(split_nodes)
 
     return new_nodes
+
+
+def extract_markdown_images(text):
+
+    # We exclude [] with '[^\[\]]' so if there are [] inside of the main [] we know there is accidental overlapping. [foo [] bar] is no good.
+    return re.findall(r"!\[([^\[\]]*)\]\(([^\(\)]*)\)", text)
+
+
+def extract_markdown_links(text):
+
+    # (?<!!) means it will discard the string if it matches '!' before the main expression. The '!' makes the markdown string an image vs. link.
+    return re.findall(r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)", text)
