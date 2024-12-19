@@ -5,19 +5,15 @@ from extract_markdown import extract_markdown_images, extract_markdown_links
 
 
 def main():
+    test = extract_markdown_images(
+        "This is text with a ![rick roll](https://i.imgur.com/aKaOqIh.gif)"
+    )
+
+    print(test)
     print(
-        extract_markdown_links(
-            "This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev)"
-        ),
         extract_markdown_images(
-            "This is text with a ![rick roll](https://i.imgur.com/aKaOqIh.gif) and ![obi wan](https://i.imgur.com/fJRm4Vk.jpeg)"
-        ),
-        extract_markdown_images(
-            "This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev)"
-        ),
-        extract_markdown_links(
-            "This is text with a ![rick roll](https://i.imgur.com/aKaOqIh.gif) and ![obi wan](https://i.imgur.com/fJRm4Vk.jpeg)"
-        ),
+            "This is text with a ![rick roll](https://i.imgur.com/aKaOqIh.gif"
+        )
     )
 
 
